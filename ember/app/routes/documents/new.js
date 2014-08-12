@@ -1,7 +1,6 @@
 import Ember from 'ember';
-import AuthenticatedRoute from '../authenticated';
 
-export default AuthenticatedRoute.extend({
+export default Ember.Route.extend({
   model: function() {
     return Ember.Object.create();
   }

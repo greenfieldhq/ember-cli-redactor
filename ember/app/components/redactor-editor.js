@@ -15,7 +15,7 @@ var RedactorEditorComponent = Ember.Component.extend({
     var $el, value;
     value = Ember.get(this, "body");
     $el = this.$().context;
-    if (typeof value == 'undefined') {
+    if (typeof value === 'undefined') {
       return $el.innerHTML = '';
     }
     if ($el && value !== $el.innerHTML) {
@@ -29,7 +29,7 @@ var RedactorEditorComponent = Ember.Component.extend({
   },
   didInsertElement: function() {
     this.$().redactor({
-      air: true
+      toolbarFixedBox: true
     });
     this._updateElementValue();
   }

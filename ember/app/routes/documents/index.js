@@ -1,6 +1,6 @@
-import AuthenticatedRoute from '../authenticated';
+import Ember from 'ember';
 
-export default AuthenticatedRoute.extend({
+export default Ember.Route.extend({
   model: function() {
     return this.store.find('document');
   }

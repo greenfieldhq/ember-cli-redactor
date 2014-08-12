@@ -17,18 +17,7 @@
       <ul class="nav navbar-nav">
         <li>{{link-to 'Home' 'application'}}</li>
         <li>{{link-to 'About' 'about'}}</li>
-        <li>{{link-to 'Users' 'users'}}</li>
-        <li>{{link-to 'Uploads' 'uploads'}}</li>
         <li>{{link-to 'Documents' 'documents'}}</li>
-        <li>{{link-to 'Top Secret' 'top_secret'}}</li>
-
-        {{#if isAuthenticated}}
-          <li><a href="#">{{currentUser.email}}</a></li>
-          <li><a href="#" {{action 'logout'}}>Logout</a></li>
-        {{else}}
-          <li>{{link-to 'Register' 'users.new'}}</li>
-          <li>{{link-to 'Login' 'sessions.new'}}</li>
-        {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

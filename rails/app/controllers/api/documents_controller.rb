@@ -14,9 +14,6 @@ class Api::DocumentsController < ApplicationController
   # POST /documents
   def create
     document = Document.new(document_params)
-    document.user = current_user
-    document.save!
-
     if document.new_record?
       render json: { errors: document.errors.messages }, status: 422
     else
