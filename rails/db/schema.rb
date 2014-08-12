@@ -16,46 +16,10 @@ ActiveRecord::Schema.define(version: 20140801191945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "api_keys", force: true do |t|
-    t.integer  "user_id"
-    t.string   "access_token"
-    t.string   "scope"
-    t.datetime "expired_at"
-    t.datetime "created_at"
-  end
-
-  add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", unique: true, using: :btree
-  add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id", using: :btree
-
-  create_table "cars", force: true do |t|
-    t.string   "name"
-    t.string   "make"
-    t.string   "model"
-    t.integer  "year"
-    t.string   "color"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "documents", force: true do |t|
-    t.integer  "user_id",    null: false
     t.string   "title"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "username"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
-
 end

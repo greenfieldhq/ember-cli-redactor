@@ -14,6 +14,7 @@ class Api::DocumentsController < ApplicationController
   # POST /documents
   def create
     document = Document.new(document_params)
+    document.save!
     if document.new_record?
       render json: { errors: document.errors.messages }, status: 422
     else
@@ -44,6 +45,6 @@ class Api::DocumentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def document_params
-      params.require(:document).permit(:user_id, :body, :title)
+      params.require(:document).permit(:body, :title)
     end
 end
